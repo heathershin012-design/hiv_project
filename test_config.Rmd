@@ -1,0 +1,9 @@
+---
+title: Test out the config package
+output: html_document
+--- 
+
+```{r, read-config}
+config::get()
+```
+

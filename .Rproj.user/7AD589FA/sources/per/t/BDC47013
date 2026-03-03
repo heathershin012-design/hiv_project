@@ -1,0 +1,26 @@
+{
+    "id": "BDC47013",
+    "path": "~/hiv_project/code/00_clean_data.R",
+    "project_path": "code/00_clean_data.R",
+    "type": "r_source",
+    "hash": "195249235",
+    "contents": "",
+    "dirty": false,
+    "created": 1771539496462.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "10,25",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1771543996,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1771543996248,
+    "read_only": false,
+    "read_only_alternatives": []
+}

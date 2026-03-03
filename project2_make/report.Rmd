@@ -1,0 +1,67 @@
+---
+title: Three sets of random numbers
+author: Hyelim Shin 
+output: html_document
+---
+
+```{r, here-i-am, include = FALSE}
+#! TO DO: 
+
+here::i_am("code/01_make_output1.R")
+data <- readRDS(
+  file = here::here("output1", "random_numbers1.rds")
+)
+
+#!   add call to
+here::i_am("code/02_make_output2.R")
+data <- readRDS(
+  file = here::here("output2", "random_numbers2.rds")
+)
+here::i_am("code/03_make_output3.R")
+data <- readRDS(
+  file = here::here("output3", "random_numbers3.rds")
+)
+here::i_am("code/04_render_report.R")
+data <- readRDS(
+  file = here::here("output1", "random_numbers1.rds")
+)
+```
+
+```{r, load-random-numbers, include = FALSE}
+#! TO DO: 
+#!   read random_numbers1 from output1 directory
+random_numbers1 <- readRDS(file = here::here("output1/random_numbers1.rds"))
+  #! fill in details
+
+#! TO DO: 
+#!   read random_numbers2 from output2 directory
+random_numbers2 <- readRDS(file = here::here("output2/random_numbers2.rds")
+  #! fill in details
+)
+#! TO DO: 
+#!   read random_numbers3 from output3 directory
+random_numbers3 <- readRDS(file = here::here("output3/random_numbers3.rds")
+  #! fill in details
+)
+```
+
+# Random numbers 1
+
+```{r, random-numbers1-histogram}
+#| fig.cap = "First set of random numbers"
+hist(random_numbers1)
+```
+
+# Random numbers 2
+
+```{r, random-numbers2-histogram}
+#| fig.cap = "Second set of random numbers"
+hist(random_numbers2)
+```
+
+# Random numbers 3
+
+```{r, random-numbers3-histogram}
+#| fig.cap = "Third set of random numbers"
+hist(random_numbers1)
+```

@@ -1,0 +1,26 @@
+{
+    "id": "C44B42A9",
+    "path": "~/hiv_project/project2_make/code/04_render_report.R",
+    "project_path": "code/04_render_report.R",
+    "type": "r_source",
+    "hash": "38091125",
+    "contents": "",
+    "dirty": false,
+    "created": 1771995202257.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "10,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1772068450,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1772068450621,
+    "read_only": false,
+    "read_only_alternatives": []
+}
