@@ -12,7 +12,7 @@ setwd(here::here())  # <-- ensures render runs from project root
 report_filename <- paste0(
   "hiv_report_config_",
   WHICH_CONFIG,
-  ".html"
+  ".pdf"
 )
 
 render(
