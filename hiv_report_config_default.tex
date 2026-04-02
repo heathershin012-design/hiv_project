@@ -1,0 +1,182 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{anyfontsize}
+\usepackage{multirow}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={VRC01 Neutralization Report},
+  pdfauthor={David Benkeser},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{VRC01 Neutralization Report}
+\author{David Benkeser}
+\date{2026-03-03}
+
+\begin{document}
+\maketitle
+
+\section{Descriptive Analysis}\label{descriptive-analysis}
+
+\subsection{Tabular analysis}\label{tabular-analysis}
+
+Characteristics of the 611 viruses from the CATNAP database are
+displayed in the table below.
+
+\begin{table}[t]
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcccc}
+\toprule
+ &  & \multicolumn{2}{c}{{\textbf{Num. PNGs in Glycan Shield}}} &  \\ 
+\cmidrule(lr){3-4}
+\textbf{Characteristic} & \textbf{Overall}  N = 611\textsuperscript{\textit{1}} & \textbf{\textless{} 4}  N = 101\textsuperscript{\textit{1}} & \textbf{\textgreater{}= 4}  N = 510\textsuperscript{\textit{1}} & \textbf{p-value}\textsuperscript{\textit{2}} \\ 
+\midrule\addlinespace[2.5pt]
+Region &  &  &  & 0.003 \\ 
+    Asia & 126 (21\%) & 29 (29\%) & 97 (19\%) &  \\ 
+    Europe.Americas & 96 (16\%) & 5 (5.0\%) & 91 (18\%) &  \\ 
+    N.Africa & 170 (28\%) & 26 (26\%) & 144 (28\%) &  \\ 
+    S.Africa & 219 (36\%) & 41 (41\%) & 178 (35\%) &  \\ 
+Length of Env protein & 857 (850, 863) & 852 (849, 859) & 857 (851, 864) & <0.001 \\ 
+Antibody resistance & -0.27 (-0.76, 0.54) & 0.24 (-0.62, 0.73) & -0.29 (-0.77, 0.36) & 0.030 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\vspace{.05em}
+\textsuperscript{\textit{1}}n (\%); Median (Q1, Q3)\\
+\textsuperscript{\textit{2}}Pearson's Chi-squared test; Wilcoxon rank sum test\\
+\end{minipage}
+\end{table}
+
+\subsection{Graphical analysis}\label{graphical-analysis}
+
+Below we report a scatter plot of antibody resistance as a function of
+number of PNGs in the glycan shield.
+
+\begin{center}\includegraphics[width=600px]{output/scatterplot} \end{center}
+
+\section{Regression Analysis}\label{regression-analysis}
+
+\subsection{Primary model}\label{primary-model}
+
+\begin{table}[t]
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lccc}
+\toprule
+\textbf{Characteristic} & \textbf{Beta} & \textbf{95\% CI} & \textbf{p-value} \\ 
+\midrule\addlinespace[2.5pt]
+Num. Shield glycans & -0.11 & -0.19, -0.04 & 0.003 \\ 
+Region &  &  & <0.001 \\ 
+    Asia & — & — &  \\ 
+    Europe.Americas & -0.33 & -0.57, -0.09 &  \\ 
+    N.Africa & -0.38 & -0.59, -0.17 &  \\ 
+    S.Africa & -0.03 & -0.23, 0.17 &  \\ 
+Length of Env protein & 0.02 & 0.01, 0.02 & <0.001 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\vspace{.05em}
+Abbreviation: CI = Confidence Interval\\
+\end{minipage}
+\end{table}
+
+\subsection{Secondary model}\label{secondary-model}
+
+In this analysis, we generated a binary outcome where level 1 of the
+outcome means the antibody resistance score was greater than 1.
+
+\begin{table}[t]
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lccc}
+\toprule
+\textbf{Characteristic} & \textbf{OR} & \textbf{95\% CI} & \textbf{p-value} \\ 
+\midrule\addlinespace[2.5pt]
+Num. Shield glycans & 0.82 & 0.66, 1.03 & 0.082 \\ 
+Region &  &  & 0.036 \\ 
+    Asia & — & — &  \\ 
+    Europe.Americas & 0.76 & 0.34, 1.60 &  \\ 
+    N.Africa & 0.84 & 0.44, 1.59 &  \\ 
+    S.Africa & 1.63 & 0.93, 2.92 &  \\ 
+Length of Env protein & 1.06 & 1.04, 1.08 & <0.001 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\vspace{.05em}
+Abbreviations: CI = Confidence Interval, OR = Odds Ratio\\
+\end{minipage}
+\end{table}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{verbatim}
+## [1] "/Users/hyelimshin/hiv_project/output/both_regression_tables_config_default.rds"
+\end{verbatim}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\end{document}
